@@ -1,6 +1,8 @@
 package com.mengqiu.service;
 
 
+import com.mengqiu.domain.Email;
+import com.mengqiu.service.Email.EmailGenerator;
 import org.junit.Before;
 import org.junit.Test;
 import org.jvnet.mock_javamail.Mailbox;
@@ -13,11 +15,11 @@ import static org.junit.Assert.assertThat;
 
 
 public class SendEmailTest {
-    private EmailSender emailSender;
+    private EmailGenerator.EmailSender emailSender;
 
     @Before
     public void setUp() throws Exception {
-        emailSender = new EmailSender();
+        emailSender = new EmailGenerator.EmailSender();
 
     }
 
@@ -26,7 +28,8 @@ public class SendEmailTest {
 
         String emailSubject = "test email subject";
         String emailBody = "test email body.";
-        emailSender.sendEmail("test.to@163.com", "test.from@163.com", emailSubject, emailBody);
+        Email email = new Email("test.to@163.com", "test.from@163.com", emailSubject, emailBody);
+        emailSender.sendEmail(email);
 
         List<Message> inbox = Mailbox.get("test.to@163.com");
         assertThat(inbox.size(), is(1));

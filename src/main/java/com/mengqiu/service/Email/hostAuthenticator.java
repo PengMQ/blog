@@ -1,15 +1,15 @@
-package com.mengqiu.service;
+package com.mengqiu.service.Email;
 
 
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
-public class MyAuthenticator extends Authenticator {
+public class hostAuthenticator extends Authenticator {
 
     private  String userName;
     private  String passWord;
 
-    public MyAuthenticator(String userName, String passWord) {
+    public hostAuthenticator(String userName, String passWord) {
         this.userName = userName;
         this.passWord = passWord;
     }
