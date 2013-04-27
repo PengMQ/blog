@@ -45,7 +45,6 @@ public class EmailTest {
     @Test
     public void shouldGetEmailFromAddress() throws Exception {
         assertThat(email.getFromAddress(), is("from@163.com"));
-
     }
 
     @Test
@@ -56,6 +55,5 @@ public class EmailTest {
     @Test
     public void shouldGetEmailContent() throws Exception {
         assertThat(email.getEmailContent(user),containsString("nana"));
-
     }
 }
