@@ -1,10 +1,11 @@
 <html>
 <head>
+    <meta charset="utf-8">
     <title></title>
 </head>
 <body>
 <div class="">
-    <h3>亲爱的NANA:</h3>
+    <h3>亲爱的${name!}:</h3>
     <p>请点击下面的连接完成最后的确认。</p>
     <p>
         <a href="http://localhost:8080/Blog/register/confirm">
